@@ -16,12 +16,45 @@
         <!-- endinject -->
         <!-- endbuild -->
     </head>
-    <body ng-app='movelog'>
+    <body ng-app='MoveLogApp'>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="header">
+            <div class="container">
+                MOVE log
+            </div>
+        </div>
 
+        <div class="main" ng-controller="MainController">
+            <div class="container">
+
+                <div class="row" ng-repeat="exercise in exercises">
+                    <div class="exercise-icon col-xs-2">
+                        <img ng-src="{{ exercise.icon }}" />
+                    </div>
+
+                    <div class="col-xs-6">
+                        <p class="exercise-name">
+                            {{ exercise.name }}
+                        </p>
+                    </div>
+
+                    <div class="col-xs-4 counters">
+                        <span class="decrease" ng-click="decrease($index)">-</span>
+                        <span class="count">{{ exercise.count }}</span>
+                        <span class="increase" ng-click="increase($index)">+</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+            </div>
+        </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -2,6 +2,6 @@
 {
     'use strict';
 
-    angular.module('movelog', ['movelog.controllers']);
+    angular.module('MoveLogApp', ['MoveLogApp.controllers']);
 
 })();
